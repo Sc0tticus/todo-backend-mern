@@ -15,6 +15,16 @@ router.get('/todos', async (req, res) => {
 	res.json(todos);
 });
 
+router.get('/todo/complete/:id', async (req, res) => {
+	const todo = await Todo.findById(req.params.id);
+
+	todo.complete = !todo.complete;
+
+	todo.save();
+
+	res.json(todo);
+});
+
 router.post('/todo/new', async (req, res) => {
 	const todo = new Todo({
 		text: req.body.text
