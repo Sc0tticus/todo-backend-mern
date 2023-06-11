@@ -5,3 +5,7 @@
 1. `npm i express mongoose cors nodemon`
 
 2. create server.js
+
+### Models
+
+How your database structures should be created
